@@ -1,0 +1,14 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Run Node Exporter Role') {
+            steps {
+                sh '''
+                    cd ansible
+                    ansible-playbook -i inventory.ini playbook.yml
+                '''
+            }
+        }
+    }
+}
