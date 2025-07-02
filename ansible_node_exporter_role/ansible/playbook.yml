@@ -1,6 +1,6 @@
 - name: Deploy node_exporter on localhost
 
-    hosts: targets
+    hosts: exporters
 
         become: yes
 
