@@ -4,3 +4,8 @@
 
   roles:
     - ansible_node_exporter_role
+- name: Deploy Prometheus
+  hosts: prometheus
+  become: yes
+  roles:
+    - prometheus
