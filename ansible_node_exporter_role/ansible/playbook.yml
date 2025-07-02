@@ -1,13 +1,6 @@
 - name: Deploy Node Exporter
+  hosts: exporters
+  become: yes
 
-    hosts: exporters
-
-        become: yes
-
-
-
-            roles:
-
-                  - ansible_node_exporter_role
-
-
+  roles:
+    - ansible_node_exporter_role
