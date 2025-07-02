@@ -1,4 +1,4 @@
-- name: Deploy node_exporter on localhost
+- name: Deploy Node Exporter
 
     hosts: exporters
 
