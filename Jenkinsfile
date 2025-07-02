@@ -10,7 +10,11 @@ pipeline {
 
             steps {
 
-               git branch: 'main',  git credentialsId: 'github-ssh-key', url: 'git@github.com:ziedbouafif/node_test.git'
+                git branch: 'main',
+
+                    credentialsId: 'github-ssh-key',
+
+                    url: 'git@github.com:ziedbouafif/node_test.git'
 
             }
 
