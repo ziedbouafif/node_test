@@ -1,6 +1,13 @@
----
-- name: Install Node Exporter
-  hosts: exporters
-  become: yes
-  roles:
-    - node_exporter
+- name: Deploy node_exporter on localhost
+
+    hosts: targets
+
+        become: yes
+
+
+
+            roles:
+
+                  - ansible_node_exporter_role
+
+

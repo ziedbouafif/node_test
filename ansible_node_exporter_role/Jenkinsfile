@@ -1,14 +1,41 @@
 pipeline {
+
     agent any
 
+
+
     stages {
-        stage('Run Node Exporter Role') {
+
+        stage('Clone repo') {
+
             steps {
-                sh '''
-                    cd ansible
-                    ansible-playbook -i inventory.ini playbook.yml
-                '''
+
+                git credentialsId: 'github-ssh-key', url: 'git@github.com:ziedbouafif/node_test.git'
+
             }
+
         }
+
+
+
+        stage('Run Ansible Role') {
+
+            steps {
+
+                sh '''
+
+                    cd ansible_node_exporter_role/ansible
+
+                    ansible-playbook playbook.yml -i inventory.ini
+
+                '''
+
+            }
+
+        }
+
     }
+
 }
+
+
