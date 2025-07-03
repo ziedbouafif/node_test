@@ -9,3 +9,10 @@
   become: yes
   roles:
     - prometheus
+- name: Deploy Grafana
+  hosts: grafana
+  become: yes
+  roles:
+    - grafana
+
+
