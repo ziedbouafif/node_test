@@ -37,21 +37,7 @@ pipeline {
             }
 
         }
-                stage('Run Grafana Role') {
 
-            steps {
-
-                sh '''
-
-                    cd ansible_node_exporter_role/ansible/grafana
-
-                    ansible-playbook grafana.yml -i inventory.ini
-
-                '''
-
-            }
-
-        }
 
 
     }
