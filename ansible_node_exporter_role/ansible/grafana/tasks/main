@@ -5,9 +5,17 @@
     state: present
     update_cache: yes
 
-- name: Install Grafana from local .deb
+- name: Download Grafana .deb package
+  get_url:
+    url: https://dl.grafana.com/enterprise/release/grafana-enterprise_9.6.4_amd64.deb
+    dest: /tmp/grafana-enterprise_9.6.4_amd64.deb
+    mode: '0644'
+
+- name: Install Grafana
   apt:
-    deb: "{{ role_path }}/files/grafana-enterprise_9.6.4_amd64.deb"
+    deb: /tmp/grafana-enterprise_9.6.4_amd64.deb
+  become: true
+
 
 - name: Ensure Grafana service is enabled and started
   systemd:
